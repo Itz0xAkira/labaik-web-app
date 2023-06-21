@@ -7,8 +7,8 @@ export type AuthUserDetails = {
 };
 
 export type AuthContextInfo = {
-  passportNumber: string;
-  userDetails: AuthUserDetails;
+  passportNumber: string | null;
+  userDetails: AuthUserDetails | null;
   setPassportNumber: () => void;
   setUserDetails: () => void;
 };

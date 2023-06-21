@@ -1,6 +1,5 @@
 import { AuthContext } from "../context/auth/authContext";
 import { useContext, useEffect, useState } from "react";
-import * as SecureStore from "expo-secure-store";
 import { SECURED_STORAGE_KEY_PASSPORT } from "../config/storage.config";
 
 export const useAuth = () => {
@@ -10,7 +9,7 @@ export const useAuth = () => {
   const getUserPassport = async () => {
     try {
       setIsLoading(true);
-      const passport = await SecureStore.getItemAsync(
+      const passport = await localStorage.getItemAsync(
         SECURED_STORAGE_KEY_PASSPORT
       );
       if (passport) {
@@ -29,7 +28,7 @@ export const useAuth = () => {
 
   const setUserPassport = async (passport: string) => {
     try {
-      await SecureStore.setItemAsync(SECURED_STORAGE_KEY_PASSPORT, passport);
+      await localStorage.setItemAsync(SECURED_STORAGE_KEY_PASSPORT, passport);
       getUserPassport();
     } catch (err) {
       console.log("useAuth: setUserPassport: Error:", err);

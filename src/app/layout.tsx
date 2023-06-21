@@ -8,8 +8,6 @@ import { NavBar } from '@/components/NavBar/NavBar';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Labaik Web',
-  description: 'Labaik Web App - Mekka Hotels and Towers',
 }
 
 export default function RootLayout({
@@ -19,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Labaik Web</title>
+        <meta name="description" content="Labaik Web App - Mekka Hotels and Towers"></meta>
+      </head>
       <body className={`lg:hidden ${inter.className}`}>
         <NavBar />
         {children}</body>

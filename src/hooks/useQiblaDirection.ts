@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Bounds, ZoneBounds } from "../assets/data/zoneBounds";
+import { Bounds, ZoneBounds } from "@/data/zoneBounds";
 
 export const MECCA_LATITUDE = 21.422547464888435;
 export const MECCA_LONGITUDE = 39.826183447419844;

@@ -6,11 +6,6 @@ import 'primeicons/primeicons.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-    title: 'Labaik Web',
-    description: 'Labaik Web App - Mekka Hotels and Towers',
-}
-
 export default function RootLayout({
     children,
 }: {
@@ -18,6 +13,10 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
+            <head>
+                <title>Labaik Web</title>
+                <meta name="description" content="Labaik Web App - Mekka Hotels and Towers"></meta>
+            </head>
             <body className={inter.className}>
                 {children}</body>
         </html>

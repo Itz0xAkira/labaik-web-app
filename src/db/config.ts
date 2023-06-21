@@ -1,15 +1,5 @@
 import { initializeApp } from "firebase/app";
 
-//Testing
-// const firebaseConfig = {
-//   apiKey: "AIzaSyCdN3DjPB_JEeRRPpFxV0pidz6htIP6lO4",
-//   authDomain: "mekkah-hotels-demo.firebaseapp.com",
-//   projectId: "mekkah-hotels-demo",
-//   storageBucket: "mekkah-hotels-demo.appspot.com",
-//   messagingSenderId: "934039164068",
-//   appId: "1:934039164068:web:7f99a4632700bb30800231",
-// };
-
 //Production
 const firebaseConfig = {
   apiKey: "AIzaSyAPljtE4WMskFrwLZSjRRyZbI1UQKFR5wY",

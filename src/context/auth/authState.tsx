@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AuthContext, AuthContextInfo, defaultAuthInfo } from "./authContext";
-import * as SecureStorage from "expo-secure-store";
 
-const AuthState = (props) => {
+const AuthState = (props: any) => {
   const [userInfo, setUserInfo] = useState<AuthContextInfo>(defaultAuthInfo);
   const [userToken, setUserToken] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +12,7 @@ const AuthState = (props) => {
 
   const checkAuthenticationStatus = async () => {
     try {
-      const retrievedInfo = await SecureStorage.getItemAsync("user-token");
+      const retrievedInfo = await localStorage.getItem("user-token");
 
       // setUserInfo(retrievedInfo);
     } catch (err) {
@@ -25,13 +24,13 @@ const AuthState = (props) => {
   };
 
   const onAuthentication = async () => {
-    // await SecureStorage.setItemAsync("user-token", USER_TOKEN);
+    // await localStorage.setItemAsync("user-token", USER_TOKEN);
     // setUserToken(USER_TOKEN);
     console.warn("user has been authenticated!");
   };
 
   const userSignout = async () => {
-    await SecureStorage.deleteItemAsync("user-token");
+    // await SecureStorage.deleteItemAsync("user-token");
     setUserToken(null);
   };
 
