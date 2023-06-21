@@ -2,7 +2,7 @@
 import { i18n } from '@/config/translations.config';
 import { getUserByPassport } from '@/db/user';
 import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 const Page = () => {
@@ -22,7 +22,7 @@ const Page = () => {
 
             if (!passport) {
                 alert(i18n.t("messages.digitalIdentityLoginRequired"))
-                replace("App");
+                replace("/");
             }
         } catch (err) {
             console.log(`Identity: useEffect: ${err}`)
