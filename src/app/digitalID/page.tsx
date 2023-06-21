@@ -4,7 +4,8 @@ import { getUserByPassport } from '@/db/user';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-
+import { getDownloadURL, getStorage, ref } from "firebase/storage"
+import { app } from '@/db/config';
 const Page = () => {
     const { passport, getUserPassport } = useAuth();
     const [imageUrl, setImageUrl] = useState(null);
@@ -33,8 +34,30 @@ const Page = () => {
         initScreen();
     }, [passport]);
 
+
+    useEffect(() => {
+        const bucket = getStorage(app);
+        const file = ref(bucket, `/digital-identities/User-1`);
+
+        getDownloadURL(file)
+            .then((url: any) => {
+                setImageUrl(url);
+                console.log("Upload Url:", url);
+            })
+            .catch((error) => {
+                console.log("Error:", error);
+            });
+    }, []);
+
     return (
-        <div>Page</div>
+        <div className="flex flex-col justify-center items-center h-screen gap-2">
+            <img
+                className="w-1/2 "
+                src={imageUrl || ""}
+                alt="Digital ID"
+            />
+            <div className="w-1/2 text-center font-bold text-3xl text-[#2d3436]">Scan this QR Code to view your Digital Identity</div>
+        </div>
     )
 }
 
