@@ -56,7 +56,7 @@ export default function Home() {
             onClick={() => { }}
           />
         </div>
-        <img className="w-full h-" src="/backgrounds/LowerService.png" />
+        <img className="w-full" src="/backgrounds/LowerService.png" />
       </div>
     </main>
   )
