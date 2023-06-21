@@ -7,6 +7,7 @@ import { getUserByPassport } from '@/db/user'
 import { useAuth } from '@/hooks/useAuth'
 import moment from 'moment'
 import { useRouter } from 'next/navigation'
+import { ProgressSpinner } from 'primereact/progressspinner'
 import React, { useEffect, useState } from 'react'
 
 type Activity = {
@@ -64,8 +65,8 @@ const Schedule = () => {
             }
 
             if (!passport) {
-                alert(i18n.t("messages.scheduleLoginRequired"))
-            }
+            } alert(i18n.t("messages.scheduleLoginRequired"))
+
         } catch (err) {
             console.log(`Schedule: useEffect: ${err}`)
         }
@@ -74,6 +75,13 @@ const Schedule = () => {
     useEffect(() => {
         initScreen();
     }, [passport, refreshCounter]);
+
+    if (loadingActivities) {
+        return (
+            <div className="flex justify-center items-center">
+                <ProgressSpinner />
+            </div>)
+    }
 
     return (
         <>

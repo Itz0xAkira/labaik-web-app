@@ -2,9 +2,13 @@
 import { Banner } from '@/components/Banner/Banner'
 import { ServiceButton } from '@/components/ServiceButton/ServiceButton'
 import { BookIcon, CameraIcon, ClinicIcon, IdentityIcon, MealIcon, ReviewIcon, ScheduleIcon, complainIcon } from '@/config/icons'
+import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 
 export default function Home() {
+  const { push } = useRouter();
+
+
   return (
     <main className="flex flex-col min-h-screen">
       <Banner />
@@ -28,12 +32,12 @@ export default function Home() {
           <ServiceButton
             label='Meals'
             icon={MealIcon}
-            onClick={() => { }}
+            onClick={() => { push("meals") }}
           />
           <ServiceButton
             label='Schedule'
             icon={ScheduleIcon}
-            onClick={() => { }}
+            onClick={() => { push("schedule") }}
           />
           <ServiceButton
             label='Clinic'
