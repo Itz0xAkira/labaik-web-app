@@ -1,0 +1,16 @@
+export const Hajj1AR_banner = "/hajjbanners/hajj1AR.png";
+export const Hajj2AR_banner = "/hajjbanners/hajj2AR.png";
+export const Hajj3AR_banner = "/hajjbanners/hajj3AR.png";
+export const Hajj4AR_banner = "/hajjbanners/hajj4AR.png";
+export const Hajj1EN_banner = "/hajjbanners/hajj1EN.png";
+export const Hajj2EN_banner = "/hajjbanners/hajj2EN.png";
+export const Hajj3EN_banner = "/hajjbanners/hajj3EN.png";
+export const Hajj4EN_banner = "/hajjbanners/hajj4EN.png";
+export const Hajj1UR_banner = "/hajjbanners/hajj1UR.png";
+export const Hajj2UR_banner = "/hajjbanners/hajj2UR.png";
+export const Hajj3UR_banner = "/hajjbanners/hajj3UR.png";
+export const Hajj4UR_banner = "/hajjbanners/hajj4UR.png";
+export const Hajj1FP_banner = "/hajjbanners/hajj1FP.png";
+export const Hajj2FP_banner = "/hajjbanners/hajj2FP.png";
+export const Hajj3FP_banner = "/hajjbanners/hajj3FP.png";
+export const Hajj4FP_banner = "/hajjbanners/hajj4FP.png";
