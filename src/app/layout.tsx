@@ -19,8 +19,9 @@ export default function RootLayout({
         <meta name="description" content="Labaik Web App - Mekka Hotels and Towers"></meta>
       </head>
       <body className={`lg:hidden ${inter.className}`}>
+        {children}
         <NavBar />
-        {children}</body>
+      </body>
     </html>
   )
 }

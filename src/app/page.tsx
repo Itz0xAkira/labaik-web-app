@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       <Banner />
-      <div className="flex w-full justify-between items-center p-2 absolute top-[23vh]">
+      <div className="flex w-full justify-between items-center p-2 absolute top-[24vh]">
         <Button className="rounded-xl bold text-white bg-[#24272C] border-none shadow-lg" label='Services' />
         <Button className="rounded-xl bold text-white bg-[#24272C] border-none shadow-lg" label='News' />
       </div>

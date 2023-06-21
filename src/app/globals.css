@@ -26,6 +26,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
     background: url("/backgrounds/background.png");
+    max-height: 100vh;
 }
 
 
