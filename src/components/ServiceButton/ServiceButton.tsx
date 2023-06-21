@@ -4,7 +4,7 @@ import React, { FC, useEffect, useMemo } from "react";
 export const ServiceButton: FC<{ icon: string; label: string; onClick: () => void; }> = ({ icon, label, onClick }) => {
 
   return (
-    <div className="flex justify-center flex-col items-center cursor-pointer h-32 w-32 md:h-36 md:w-36" style={styles.gridButton} {...{ onClick }}>
+    <div className="flex justify-center flex-col items-center cursor-pointer h-28 w-28 md:h-36 md:w-36" style={styles.gridButton} {...{ onClick }}>
       <img
         width={50}
         height={50}
