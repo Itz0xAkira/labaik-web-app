@@ -11,7 +11,7 @@ type Prayers = {
 export const getPrayers = async (): Promise<Prayers | null | undefined> => {
   try {
     const date = moment().format("DD-MM-YYYY");
-    const url = `http://api.aladhan.com/v1/timings/${date}?latitude=21.422547464888435&longitude=39.826183447419844`;
+    const url = `https://api.aladhan.com/v1/timings/${date}?latitude=21.422547464888435&longitude=39.826183447419844`;
     const response = await fetch(url);
     if (response && response.status === 200) {
       const data = await response.json();
