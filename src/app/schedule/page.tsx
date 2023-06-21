@@ -65,7 +65,9 @@ const Schedule = () => {
             }
 
             if (!passport) {
-            } alert(i18n.t("messages.scheduleLoginRequired"))
+                alert(i18n.t("messages.scheduleLoginRequired"))
+                replace("/")
+            }
 
         } catch (err) {
             console.log(`Schedule: useEffect: ${err}`)
