@@ -1,7 +1,7 @@
 "use client"
 import { Banner } from '@/components/Banner/Banner'
 import { ServiceButton } from '@/components/ServiceButton/ServiceButton'
-import { BalanceIcon, BookIcon, CameraIcon, ClinicIcon, IdentityIcon, MealIcon, ReviewIcon, ScheduleIcon, complainIcon } from '@/config/icons'
+import { BookIcon, CameraIcon, ClinicIcon, IdentityIcon, MealIcon, ReviewIcon, ScheduleIcon, complainIcon } from '@/config/icons'
 import { Button } from 'primereact/button';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
           <ServiceButton
             label='Review'
             icon={ReviewIcon}
-            onClick={() => { }}
+            onClick={() => { window.open("https://docs.google.com/forms/d/e/1FAIpQLSc-fMjLICw6HIzYJ6IRO5_JpKwdc4-DF8VvEn6YSdlaA0PPlg/viewform?usp=sf_link", '_blank'); }}
           />
           <ServiceButton
             label='Meals'

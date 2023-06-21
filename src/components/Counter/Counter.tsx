@@ -1,3 +1,4 @@
+"use client"
 import moment from 'moment'
 import { i18n } from '../../config/translations.config'
 import React, { useEffect } from 'react'
@@ -13,8 +14,12 @@ type CounterProps = {
 }
 
 export const Counter: React.FC<CounterProps> = ({ className = "", counterContainerClassName = "", title, remainingTimeInSeconds, onFinish, showDays = false }) => {
-    const [countDownInSeconds, { startCountdown, resetCountdown }] = useCountdown({ countStart: remainingTimeInSeconds, intervalMs: 1000 });
+    const [countDownInSeconds, { startCountdown, resetCountdown, stopCountdown }] = useCountdown({ countStart: remainingTimeInSeconds < 0 ? 0 : remainingTimeInSeconds, intervalMs: 1000 });
     useEffect(() => {
+        if (remainingTimeInSeconds === Infinity) {
+            stopCountdown();
+        }
+
         resetCountdown();
         startCountdown();
     }, [remainingTimeInSeconds])

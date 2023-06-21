@@ -9,9 +9,7 @@ export const useAuth = () => {
   const getUserPassport = async () => {
     try {
       setIsLoading(true);
-      const passport = await localStorage.getItemAsync(
-        SECURED_STORAGE_KEY_PASSPORT
-      );
+      const passport = await localStorage.getItem(SECURED_STORAGE_KEY_PASSPORT);
       if (passport) {
         setPassport(passport);
         return passport;
@@ -28,7 +26,7 @@ export const useAuth = () => {
 
   const setUserPassport = async (passport: string) => {
     try {
-      await localStorage.setItemAsync(SECURED_STORAGE_KEY_PASSPORT, passport);
+      await localStorage.setItem(SECURED_STORAGE_KEY_PASSPORT, passport);
       getUserPassport();
     } catch (err) {
       console.log("useAuth: setUserPassport: Error:", err);
