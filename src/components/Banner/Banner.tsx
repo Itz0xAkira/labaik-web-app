@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react'
 import { Counter } from '../Counter/Counter'
 import { getPrayers } from '@/config/prayers';

@@ -56,7 +56,7 @@ const Page = () => {
                 src={imageUrl || ""}
                 alt="Digital ID"
             />
-            <div className="w-1/2 text-center font-bold text-3xl text-[#2d3436]">Scan this QR Code to view your Digital Identity</div>
+            <div className="w-1/2 text-center font-bold text-3xl text-[#2d3436]">{i18n.t("title.digitalIdentity")}</div>
         </div>
     )
 }

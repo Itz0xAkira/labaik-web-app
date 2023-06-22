@@ -3,9 +3,11 @@ import { STORAGE_KEY_PREFERRED_LOCALE } from "../config/storage.config";
 import { useEffect, useState } from "react";
 
 export const useI18n = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const [isRTL, setIsRTL] = useState(false);
   const loadLocale = async () => {
     try {
+      setIsLoading(true);
       const locale = await localStorage.getItem(STORAGE_KEY_PREFERRED_LOCALE);
       if (locale) {
         console.log("useI18n: loadLocale: Setting locale to:", locale);
@@ -15,6 +17,8 @@ export const useI18n = () => {
       }
     } catch (err) {
       console.log("useI18n: loadLocale: Error:", err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -31,9 +35,14 @@ export const useI18n = () => {
     }
   };
 
+  useEffect(() => {
+    loadLocale();
+  }, []);
+
   return {
     locale: i18n.locale,
     loadLocale,
     updateLocale,
+    isLoading,
   };
 };

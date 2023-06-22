@@ -709,9 +709,6 @@ const i18n = new I18n(
     fr,
   },
   {
-    // locale: Localisation.locale,
-    locale: "en",
-    enableFallback: true,
     defaultLocale: "en",
     availableLocales: ["en", "ar", "ur", "ph", "fr"],
   }
